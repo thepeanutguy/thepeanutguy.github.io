@@ -11,18 +11,40 @@
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="icon.png">
 
-    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
 
-    <meta name="theme-color" content="#fafafa">
+    <meta name="theme-color" content="#7738ea">
 </head>
 
 <body>
+  <div id="intro" class="intro">
+    <h1 class="h1 intro__h1">Bingo</h1>
 
-<!-- Add your site or application content here -->
-<p>Bingo</p>
-<script src="js/app.js"></script>
+    <form id="intro-form">
+      <input type="text" name="username" id="username" placeholder="Enter your name" class="intro__input" autocomplete="given-name" />
 
+      <button type="submit" class="button button__primary intro__button">
+        Start
+      </button>
+    </form>
+  </div>
+
+  <div id="bingo-card" class="bingo-card bingo-card--hidden">
+    <h2 id="bingo-card-title" class="bingo-card bingo-card--title"></h2>
+
+    <div id="bingo-card-grid" class="bingo-card__grid">
+    </div>
+
+<!--    <button type="button" id="bingo-card-restart" class="button button__primary bingo-card__restart-button">-->
+<!--      Restart-->
+<!--    </button>-->
+  </div>
+
+  <script src="js/app.js" async defer></script>
 </body>
-
 </html>
