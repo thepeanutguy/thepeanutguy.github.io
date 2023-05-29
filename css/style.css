@@ -1,0 +1,179 @@
+:root {
+  --font-size: calc(1em + .1vw);
+
+  --color-black: #222222;
+  --color-white: #ffffff;
+  --color-gray: #d8d8d8;
+
+  --color-brand-purple--light: #6f3590;
+  --color-brand-purple--dark: #4a0868;
+}
+
+html,
+body {
+  font-family: 'Raleway', sans-serif;
+  font-size: var(--font-size);
+  color: var(--color-black);
+}
+
+.wrapper {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 1.5em;
+}
+
+.link {
+  color: var(--color-black);
+  font-weight: bold;
+}
+
+.page-divider {
+  border-bottom: solid 2px var(--color-gray);
+  margin: 3.55em 0 2.5em;
+  max-width: 4em;
+}
+
+.cat {
+  width: 5em;
+  display: flex;
+  margin-left: auto;
+}
+
+/**
+ * Fonts
+ */
+@font-face {
+  font-display: swap;
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/fonts/raleway/raleway-v28-latin-500.eot'); /* IE9 Compat Modes */
+  src: url('/fonts/raleway/raleway-v28-latin-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('/fonts/raleway/raleway-v28-latin-500.woff2') format('woff2'), /* Super Modern Browsers */
+  url('/fonts/raleway/raleway-v28-latin-500.woff') format('woff'), /* Modern Browsers */
+  url('/fonts/raleway/raleway-v28-latin-500.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('/fonts/raleway/raleway-v28-latin-500.svg#Raleway') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/raleway/raleway-v28-latin-700.eot'); /* IE9 Compat Modes */
+  src: url('/fonts/raleway/raleway-v28-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('/fonts/raleway/raleway-v28-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+  url('/fonts/raleway/raleway-v28-latin-700.woff') format('woff'), /* Modern Browsers */
+  url('/fonts/raleway/raleway-v28-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('/fonts/raleway/raleway-v28-latin-700.svg#Raleway') format('svg'); /* Legacy iOS */
+}
+
+/**
+ * Nav
+ */
+.nav {}
+
+.nav__ul {
+  list-style-type: none;
+  margin: 0.5em 0;
+  padding: 0;
+  display: flex;
+  justify-content: end;
+  gap: 1em;
+}
+
+.nav__ul > li {
+  display: flex;
+}
+
+.nav__ul > li > a {
+  padding: 0.75em 0.75em 0.80em;
+  color: var(--color-black);
+  font-weight: bold;
+  transition: background-color 200ms ease-in;
+  border-radius: 0.25em;
+  text-align: center;
+}
+
+.nav__hire {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5em;
+}
+
+/**
+ * Intro
+ */
+.intro {
+  min-height: calc(100vh - 3em);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro__image {
+  display: flex;
+  max-width: 100%;
+  margin: 0 auto 1em;
+}
+
+.intro__title {
+  margin: 0.15em 0 0.25em;
+  font-weight: 600;
+  line-height: 1.1em;
+  text-align: center;
+}
+
+.intro__description {
+  margin-bottom: 1.25em;
+  line-height: 1.2em;
+  text-align: center;
+}
+
+/**
+ * Projects
+ */
+.projects {}
+
+.projects__intro {
+  display: flex;
+  width: 100%;
+}
+
+.projects__intro > img {
+  width: 40px;
+  margin-right: 0.85em;
+  margin-bottom: 0.25em;
+}
+
+.projects__group:not(:last-of-type) {
+  margin-bottom: 2em;
+}
+
+.projects__group > h3 {
+  margin-bottom: 0;
+}
+
+.projects__group > i {
+  display: block;
+  margin-top: 0.2em;
+  color: var(--color-brand-purple--light);
+  font-weight: bold;
+  font-style: italic;
+}
+
+/**
+ * Hire
+ */
+.hire {}
+
+.hire__intro {
+  display: flex;
+  width: 100%;
+}
+
+.hire__intro > img {
+  width: 40px;
+  margin-right: 0.85em;
+}

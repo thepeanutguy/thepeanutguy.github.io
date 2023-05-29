@@ -1,28 +1,105 @@
 <!doctype html>
-<html class="no-js" lang="en">
-
+<html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Bingo</title>
-    <meta name="description" content="">
+    <title>Kieran Parker</title>
+    <meta name="description" content="Front end development and accessibility based in Glasgow">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="icon" href="/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="icon.png">
+    <link rel="icon" href="images/person.svg" sizes="any">
+    <link rel="icon" href="images/person.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="images/person.svg">
 
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
 
-    <meta name="theme-color" content="#fafafa">
+    <meta name="theme-color" content="#6f3590">
 </head>
-
 <body>
+  <main class="wrapper">
+    <div class="intro">
+      <header>
+        <img src="/images/person.svg" alt="Outline drawing of a person's torso and head." class="intro__image">
+        <h1 class="intro__title" id="anchor-home">Kieran Parker</h1>
+        <p class="intro__description">
+          Front end development and accessibility based in Glasgow
+        </p>
+      </header>
 
-<!-- Add your site or application content here -->
-<p>Bingo</p>
-<script src="js/app.js"></script>
+      <nav class="nav">
+        <ul class="nav__ul">
+          <li>
+            <a href="#projects">
+              Projects
+            </a>
+          </li>
+          <li>
+            <a href="#hire" class="nav__hire">
+              Hire
+              <img src="images/underline.svg" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/kieran-p-1a389bb7/" rel="noreferrer noopener">
+              Linkedin
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
 
+    <section class="projects">
+      <div class="projects__intro">
+        <img src="images/fun-arrow.svg" alt="">
+        <h2 id="projects">Projects</h2>
+      </div>
+
+      <div class="projects__group">
+        <h3>ClassForKids</h3>
+        <i>Kids activity and booking platform.</i>
+        <p>As the front end developer, designer and strategist.</p>
+      </div>
+
+      <div class="projects__group">
+        <h3>FanDuel</h3>
+        <i>Sportsbook and fantasy football.</i>
+        <p>As an accessibility consultant and developer.</p>
+      </div>
+    </section>
+
+    <div class="page-divider"></div>
+
+    <section class="hire">
+      <div class="hire__intro">
+        <img src="images/coffee.svg" alt="">
+        <h2 id="hire">Hire</h2>
+      </div>
+
+      <div>
+        <p>
+          Here are some of the things I can do for you, in no particular order:
+        </p>
+
+        <ul>
+          <li>
+            Help you conceive an accessible identity.
+          </li>
+          <li>
+            Create you a smart, reusable CSS layout.
+          </li>
+          <li>
+            Improve your technical documentation.
+          </li>
+          <li>
+            Plan and help to run your first usability workshop.
+          </li>
+        </ul>
+
+        <p>Do you like what you see? Contact me <strong><a href="mailto:kieranparker91@gmail.com" class="link">kieranparker91@gmail.com</a></strong></p>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/app.js" async defer></script>
 </body>
-
 </html>
