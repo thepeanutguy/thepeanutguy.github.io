@@ -1,5 +1,5 @@
 'use strict';
 
 window.onload = () => {
-  console.log('Hello, World!');
+  console.log('Life didn\'t give us lemons! We invented them.');
 };
