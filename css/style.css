@@ -1,12 +1,18 @@
 :root {
-  --font-size: calc(1em + .1vw);
+  --font-size: calc(1em + 0.1vw);
 
-  --color-black: #222222;
   --color-white: #ffffff;
+  --color-black: #222222;
+  --color-dark-gray: #333333;
   --color-gray: #d8d8d8;
+  --color-dark-mode: #eeeeee;
 
   --color-brand-purple--light: #6f3590;
   --color-brand-purple--dark: #4a0868;
+}
+
+* {
+  background-color: inherit;
 }
 
 html,
@@ -71,14 +77,17 @@ body {
 /**
  * Nav
  */
-.nav {}
+.nav {
+  display: flex;
+  margin: 0 auto auto;
+}
 
 .nav__ul {
   list-style-type: none;
   margin: 0.5em 0;
   padding: 0;
   display: flex;
-  justify-content: end;
+  justify-content: center;
   gap: 1em;
 }
 
@@ -105,30 +114,84 @@ body {
  * Intro
  */
 .intro {
-  min-height: calc(100vh - 3em);
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
-.intro__image {
+/**
+ * Banner
+ */
+.banner {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-bottom: 4.5em;
+}
+
+.banner__intro {
+  display: flex;
+  flex-direction: column;
+  margin: auto 0;
+  padding: 1.5em;
+}
+
+.banner__image {
   display: flex;
   max-width: 100%;
   margin: 0 auto 1em;
 }
 
-.intro__title {
+.banner__title {
   margin: 0.15em 0 0.25em;
   font-weight: 600;
   line-height: 1.1em;
   text-align: center;
 }
 
-.intro__description {
+.banner__description {
   margin-bottom: 1.25em;
   line-height: 1.2em;
   text-align: center;
+}
+
+.banner__theme-switcher {
+  display: flex;
+  justify-content: end;
+  padding: 1em;
+}
+
+.banner__theme-switcher__button {
+  border: none;
+  border-radius: 5px;
+  padding: 0.75em 1em;
+  color: var(--color-white);
+  background-color: var(--color-black);
+  cursor: pointer;
+  box-shadow: 0 4px 6px var(--color-gray);;
+  transition: all 100ms ease;
+}
+
+.banner__theme-switcher__button:active {
+  box-shadow: none;
+  background-color: var(--color-dark-gray);
+}
+
+html.dark-theme {
+  background-color: var(--color-dark-mode);
+  filter: invert(100%);
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    background-color: var(--color-dark-mode);
+    filter: invert(100%);
+  }
+
+  html.light-theme {
+    background-color: unset;
+    filter: none;
+  }
 }
 
 /**

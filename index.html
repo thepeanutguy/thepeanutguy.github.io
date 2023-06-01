@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Kieran Parker</title>
+    <title>Kieran Parker | Front end development and accessibility</title>
     <meta name="description" content="Front end development and accessibility based in Glasgow">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -16,38 +16,47 @@
     <meta name="theme-color" content="#6f3590">
 </head>
 <body>
-  <main class="wrapper">
-    <div class="intro">
-      <header>
-        <img src="/images/person.svg" alt="Outline drawing of a person's torso and head." class="intro__image">
-        <h1 class="intro__title" id="anchor-home">Kieran Parker</h1>
-        <p class="intro__description">
+  <div class="intro">
+    <header class="banner">
+      <div class="banner__theme-switcher">
+        <button class="banner__theme-switcher__button" id="theme-switcher-button" aria-pressed="true">
+          Dark theme:
+          <span id="theme-switcher-state" aria-hidden="true">off</span>
+        </button>
+      </div>
+
+      <div class="banner__intro">
+        <img src="/images/person.svg" alt="Outline drawing of a person's torso and head." class="banner__image">
+        <h1 class="banner__title" id="anchor-home">Kieran Parker</h1>
+        <p class="banner__description">
           Front end development and accessibility based in Glasgow
         </p>
-      </header>
 
-      <nav class="nav">
-        <ul class="nav__ul">
-          <li>
-            <a href="#projects">
-              Projects
-            </a>
-          </li>
-          <li>
-            <a href="#hire" class="nav__hire">
-              Hire
-              <img src="images/underline.svg" alt="">
-            </a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/kieran-p-1a389bb7/" rel="noreferrer noopener">
-              Linkedin
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
+        <nav class="nav">
+          <ul class="nav__ul">
+            <li>
+              <a href="#projects">
+                Projects
+              </a>
+            </li>
+            <li>
+              <a href="#hire" class="nav__hire">
+                Hire
+                <img src="images/underline.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/kieran-p-1a389bb7/" rel="noreferrer noopener">
+                Linkedin
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+  </div>
 
+  <main class="wrapper">
     <section class="projects">
       <div class="projects__intro">
         <img src="images/fun-arrow.svg" alt="">
