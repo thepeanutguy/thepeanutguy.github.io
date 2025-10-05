@@ -42,11 +42,11 @@ window.onload = () => {
   const prefersColorScheme = determinePreferredColorScheme();
 
   /**
-   * @param {'dark' | 'light'} setTo
+   * @param {'dark' | 'light'} theme
    * @return {void}
    */
-  const toggleClassOnHtml = (setTo) => {
-    if (setTo === DARK) {
+  const toggleClassOnHtml = (theme) => {
+    if (theme === DARK) {
       htmlEl.classList.remove('light-theme');
       htmlEl.classList.add('dark-theme');
 
@@ -58,11 +58,11 @@ window.onload = () => {
   };
 
   /**
-   * @param {'dark' | 'light'} setTo
+   * @param {'dark' | 'light'} theme
    * @return {void}
    */
-  const toggleTheme = (setTo) => {
-    if (setTo === DARK) {
+  const toggleTheme = (theme) => {
+    if (theme === DARK) {
       toggleClassOnHtml(DARK);
       saveThemePreference(DARK);
       themeSwitcherButtonEl.setAttribute('aria-pressed', 'true');
