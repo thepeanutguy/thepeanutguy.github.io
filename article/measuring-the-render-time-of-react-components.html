@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Measuring the render time of React components | Kieran Parker</title>
+  <meta
+    name="description"
+    content="Front end, back end and accessibility development based in Glasgow"
+  />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <link rel="icon" href="/images/lambda.svg" sizes="any"/>
+  <link rel="icon" href="/images/lambda.svg" type="image/svg+xml"/>
+  <link rel="apple-touch-icon" href="/images/lambda.svg"/>
+
+  <link rel="stylesheet" href="/css/build/style.css"/>
+
+  <meta name="theme-color" content="#5e5086"/>
+</head>
+<body>
+<div class="wrapper">
+  <header class="header">
+    <a href="#content" class="visually-hidden">Jump to main content</a>
+
+    <div class="header__title">
+      <a href="/" class="header__logo" aria-label="Home">
+        <img src="/images/lambda.svg" alt="">
+      </a>
+
+      <a href="/" class="header__title__link">
+        Kieran Parker
+      </a>
+    </div>
+
+    <nav aria-label="Main" class="header__nav">
+      <ul class="header__nav__list">
+        <li class="header__nav__item">
+          <a href="/" class="link">
+            <span class="dashed">Home</span>
+          </a>
+        </li>
+        <li class="header__nav__item">
+          <a href="/about" class="link">
+            <span class="dashed">About</span>
+          </a>
+        </li>
+        <li class="header__nav__item">
+          <a href="https://www.linkedin.com/in/kieran-p-1a389bb7/" class="link">
+            <span class="dashed">Linkedin</span>
+          </a>
+        </li>
+        <li class="header__nav__item">
+          <a href="https://codeberg.org/thepeanutguy/" class="link">
+            <span class="dashed">Projects + Code</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="content">
+    <div class="article">
+      <div class="article__header">
+        <h1 class="article__header__title">Measuring the render phase duration of React components</h1>
+        <time datetime="2026-06-17" class="time">17th of May 2026</time>
+      </div>
+
+      <p>
+        So you've read <a href="https://react.dev/reference/dev-tools/react-performance-tracks">React Performance tracks</a>,
+        profiled your application and are not sure what to do next. Let's take an examples from the React article, <i>Video</i>.
+      </p>
+
+      <figure>
+        <img src="/images/react-profile-components.png" alt="Screenshot of Chrome DevTools, in the performance tab, showing the components track, with siz instances of Video, of which the fifth instance is twice as any other instance." style="aspect-ratio: 2.89 / 1" />
+        <figcaption>
+          <a href="https://react.dev/reference/dev-tools/react-performance-tracks">React Performance tracks</a>
+        </figcaption>
+      </figure>
+
+      <p>
+        With our hypothetical <i>Video</i> component, the fifth instance is taking twice as long to render as any
+        other instance. To get a better grasp on what's going wrong, we should benchmark the component directly:
+      </p>
+
+      <pre><code class="language-tsx">const Video = () => {
+  const before = performance.now();
+  // Some expensive code...
+  const after = performance.now();
+  console.log("Video:", `${(after - before).toFixed(2)}ms`);
+  // Video: 9.15ms
+
+  return (
+    &lt;div&gt;
+      {/* ... */}
+    &lt;/div&gt;
+  )
+};</code></pre>
+
+      <p>
+        If you have a component that re-renders many times, or is rendered in many places, you may want to capture the
+        average render time - particularly useful for components that demonstrate a significant
+        difference in their render time:
+      </p>
+
+      <pre><code class="language-tsx">let average = 0;
+let counter = 0;
+
+const Video = () => {
+  const before = performance.now();
+  // Some expensive code...
+  const after = performance.now();
+
+  const diff = after - before;
+  average = (counter + diff) / 2;
+  counter += 1;
+
+  console.log(`Video:  render ${counter} | time ${(after - before).toFixed(2)}ms | average: ${average.toFixed(2)}ms`);
+  // Video: render 1 | time: 9.15ms | average: 9.15ms
+  // Video: render 2 | time: 8.55ms | average: 8.85ms
+  // Video: render 3 | time: 9.02ms | average: 8.93ms
+  // ...
+  // Video: render 9 | time: 8.88ms | average: 8.90ms
+
+  return (
+    &lt;div&gt;
+      {/* ... */}
+    &lt;/div&gt;
+  )
+};</code></pre>
+  </main>
+</div>
+
+<script src="/js/prism.js" async></script>
+</body>
+</html>

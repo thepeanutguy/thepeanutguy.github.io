@@ -1,0 +1,31 @@
+/**
+ * Fonts.
+ */
+$font-family: sans-serif;
+$font-size: calc(1em + 0.1vw);
+$font-size-sm: calc(0.7em + 0.1vw);
+
+/**
+ * Colours.
+ */
+$color-white: #ffffff;
+$color-black: #222222;
+$color-dark-gray: #323232;
+$color-gray: darken(#d8d8d8, 25%);
+$color-light-gray: lighten(#d8d8d8, 5%);
+$color-brand-primary: #5e5086;
+$color-brand-secondary: #453a62;
+$color-brand-primary--lighten: lighten($color-brand-primary, 25%);
+$color-brand-secondary--lighten: lighten($color-brand-secondary, 25%);
+$color-brand-accessibility: #fff8ee;
+
+/**
+ * Media query sizes.
+ */
+$media-size-xs: 390px;
+$media-size-sm: 668px;
+
+/**
+ * Shadows.
+ */
+$shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;

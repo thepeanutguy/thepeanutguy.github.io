@@ -1,0 +1,35 @@
+@use "../variables";
+
+.article {
+  display: flex;
+  flex-direction: column;
+
+  &:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .article__header {
+    margin-bottom: 1rem;
+
+    .article__header__title {
+      font-size: 1.5rem;
+      margin: 0.67em 0 0;
+      font-weight: 500;
+    }
+  }
+
+  h2 {
+    margin: 3rem 0 0;
+    font-size: 1.1rem;
+  }
+
+  pre {
+    margin-top: 1.25rem;
+  }
+
+  p {
+    margin-top: 1rem;
+    margin-bottom: 0;
+  }
+}
